@@ -1,0 +1,12 @@
+---
+- name: copy file
+  hosts: all
+
+  tasks:
+    - name: copying files
+      copy:
+        src: /home/ubuntu/playbooks/test.yml
+        dest: /home/ubuntu/
+        owner: ubuntu
+        group: ubuntu
+        mode: ugo=rw
