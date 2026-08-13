@@ -3,6 +3,11 @@
   hosts: webhooks
 
   tasks:
+    - name: copying
+      copy:
+        src: /home/ubuntu/script.sh
+        dest: /home/ubuntu
+        mode: '777'
     - name: running shell command
       shell: /home/ubuntu/script.sh >> test.log
       args:
