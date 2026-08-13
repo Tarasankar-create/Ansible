@@ -1,0 +1,10 @@
+---
+- name: shell command
+  hosts: webhooks
+
+  tasks:
+    - name: running shell command
+      shell: /home/ubuntu/script.sh >> test.log
+      args:
+        chdir: /home/ubuntu
+        creates: test.log
