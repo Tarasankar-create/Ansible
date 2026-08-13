@@ -13,3 +13,4 @@
         weekday: "*"
         user: ubuntu
         job: "/home/ubuntu/test.sh"
+        #disabled: true # for disable cronjob
