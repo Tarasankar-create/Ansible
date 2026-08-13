@@ -10,3 +10,4 @@
         owner: ubuntu
         group: ubuntu
         mode: ugo=rw
+        backup: true
