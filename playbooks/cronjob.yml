@@ -1,0 +1,15 @@
+---
+- name: cronjob
+  hosts: webhooks
+
+  tasks:
+    - name: Add cron job
+      cron:
+        name: Run test script
+        minute: 05
+        hour: 22
+        day: 13
+        month: "*"
+        weekday: "*"
+        user: ubuntu
+        job: "/home/ubuntu/test.sh"
