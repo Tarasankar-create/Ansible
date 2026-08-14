@@ -1,0 +1,12 @@
+---
+- name: create user
+  hosts: webhooks
+  become: true
+
+  tasks:
+    - name: creating user
+      user:
+        name: nick
+        comment: adding new user for devops
+        shell: /bin/bash
+        groups: QA,nick
