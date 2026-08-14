@@ -1,0 +1,16 @@
+---
+
+- name: Enable firewall
+  hosts: webhooks
+  become: true
+
+  tasks:
+    - name: firewall
+      firewalld:
+        port: 80/tcp
+        permanent: true
+        state: enabled
+    - name: reload firewall
+      service:
+        name: firewalld
+        state: reloaded
