@@ -1,0 +1,13 @@
+---
+- name: kill process
+  hosts: webhooks
+  become: true
+
+  tasks:
+    - name: find and kill process
+      ignore_errors: yes
+      shell: "pgrep nginx | xargs kill"
+    - name: Start nginx
+      service:
+        name: nginx
+        state: started
