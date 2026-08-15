@@ -1,0 +1,20 @@
+---
+- name: Install application
+  hosts: all
+  become: true
+
+  vars:
+    app: nginx
+
+  tasks:
+    - name: Install on RedHat
+      ansible.builtin.package:
+        name: "{{ app }}"
+        state: present
+      when: ansible_facts["os_family"] == "RedHat"
+
+    - name: Install on Ubuntu
+      ansible.builtin.package:
+        name: "{{ app }}"
+        state: present
+      when: ansible_facts["os_family"] == "Debian"
