@@ -9,7 +9,7 @@
 - name: copy file
   copy:
     src: index.html
-    dest: /var/www/html/index.html
+    dest: "{{ html_file_path }}"
   become: true
 
 - name: start service
