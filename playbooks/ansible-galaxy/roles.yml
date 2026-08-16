@@ -1,0 +1,5 @@
+---
+- name: Install httpd
+  hosts: webhooks
+  roles:
+    - http_setup
