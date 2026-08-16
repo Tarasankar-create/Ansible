@@ -15,6 +15,6 @@
 - name: start service
   service:
     name: "{{ http_package_name }}"
-    state: present
-    enable: true
+    state: started
+    enabled: true
   become: true
